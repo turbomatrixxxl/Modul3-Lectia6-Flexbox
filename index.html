@@ -12,7 +12,7 @@
     />
 
     <!-- Cale relativa la fisier stiluri CSS -->
-    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/syles.css" />
     <title>Lectia6 CSS</title>
   </head>
 
@@ -42,18 +42,93 @@
       <!-- Noțiuni de bază -->
       <section>
         <h2 id="notiuni">Noțiuni de bază</h2>
-        <p></p>
+        <p>
+          <b>Flexible Box Layout (Flexbox</b>) – este un un modul CSS care
+          definește un set de proprietăți pentru poziționarea, alinierea și
+          distribuirea spațiului între elementele dintr-un container, chiar dacă
+          dimensiunea acestora este necunoscută sau dinamică.
+        </p>
+        <p>
+          Ideea de bază este de a separa elementele într-un container bloc
+          (flex-container) și copiii lui (flex-elemente).
+        </p>
+        <p>
+          Containerul-flexbox poate modifica lățimea și înălțimea copiilor săi,
+          precum și direcția de aranjare a acestora, alinierea într-o coloană
+          sau linie, ordinea în care sunt afișate elementele și distanța dintre
+          ele. Un container extinde elementele pentru a se potrivi cel mai bine
+          în spațiul disponibil sau le micșorează pentru a preveni
+          supraaglomerarea.
+        </p>
+        <p><b>Atentie...!!!</b></p>
+        <p>
+          Într-un container-flex, majoritatea regulilor de aranjare a
+          elementelor în funcție de tipul și fluxul documentelor sunt anulate.
+        </p>
+        <ul>
+          <li>
+            Elementele își pierd tiparul, deci încetează să mai fie de tip
+            inline sau bloc.
+          </li>
+          <li>
+            Elementele de tip bloc nu mai merg vertical unul sub celălalt.
+          </li>
+          <li>
+            Marginile de la legătura cu granița părintelui nu ies în exterior.
+          </li>
+          <li>Marginile verticale ale elementelor nu se prăbușesc.</li>
+          <li>Funcționează marginile verticale automate.</li>
+        </ul>
         <ul>
           <!-- Terminologie -->
           <li>
             <h3>Terminologie</h3>
-            <p></p>
+            <p>
+              Ordinea normală a elementelor este determinată de fluxul
+              documentului și de tipul acestora (bloc sau inline). În modelul
+              Flexbox, direcția în care sunt așezate elementele este determinată
+              de axele de direcție ale containerului de-a lungul căruia se
+              aliniază elementele.
+            </p>
+            <ul>
+              <li>
+                main axis – axa principală a containerului-flex, de-a lungul
+                căreia sunt situate elementele. Direcția nu trebuie să fie
+                orizontală, ea este controlată de proprietatea flex-direction.
+              </li>
+              <li>
+                main-start și main-end – elementele dintr-un container sunt
+                întotdeauna situate de la main-start (începutul axei principale)
+                până la main-end (sfârșitul axei principale).
+              </li>
+              <li>
+                cross axis – axa transversală, care este întotdeauna
+                perpendiculară pe axa principală. Direcția sa depinde de axa
+                principală și nu este setată în mod explicit.
+              </li>
+              <li>
+                cross-start și cross-end – începutul și sfârșitul axei
+                transversale de-a lungul căreia sunt situate rândurile de
+                elemente.
+              </li>
+            </ul>
           </li>
 
           <!-- Materiale suplimentare -->
           <li>
             <h3>Materiale suplimentare</h3>
-            <p></p>
+            <p>
+              Utilizați platforme interactive de mai jos pentru a consolida
+              vizual principalele concepte discutate.
+            </p>
+            <ul>
+              <li><a href="https://flexbox.tech/">Flexbox Playground </a></li>
+              <li>
+                <a href="https://flexboxfroggy.com/#ro"
+                  >Jocul Flexbox froggy
+                </a>
+              </li>
+            </ul>
           </li>
         </ul>
       </section>
@@ -61,12 +136,107 @@
       <!-- Proprietățile unui container -->
       <section>
         <h2 id="proprietati-container">Proprietățile unui container</h2>
-        <p></p>
+        <p>
+          Un container-flex (denumit în continuare container) este părintele
+          unui grup de elemente care trebuie reordonate. Proprietățile
+          containerului sunt cele care controlează direcția axelor,
+          multiliniaritatea și poziționarea elementelor în linie.
+        </p>
         <ul>
           <!-- Proprietatea display -->
           <li>
             <h4>Proprietatea display</h4>
-            <p></p>
+            <p>
+              Aceasta creează un container-flex, de tip bloc sau inline-block,
+              în funcție de valoarea dată și setează contextul-flex pentru toți
+              copiii (nu descendenții) containerului, transformându-i în
+              elemente-flex.
+            </p>
+            <p>display: flex | inline-flex</p>
+
+            <!-- Exemplu -->
+            <div>
+              <h5>Exemplu</h5>
+              <p>
+                Să creăm un meniu orizontal transformând ul.menu într-un
+                container-flex. Apoi copiii săi, elementele li.item, vor fi
+                amplasate de-a lungul axei principale, care în mod implicit sunt
+                aranjate de la stânga la dreapta.
+              </p>
+              <ul class="menu">
+                <li class="item"><a href="" class="link">Home page</a></li>
+                <li class="item"><a href="" class="link">Blog</a></li>
+                <li class="item"><a href="" class="link">Podcasts</a></li>
+                <li class="item"><a href="" class="link">Contacts</a></li>
+              </ul>
+
+              <!-- HTML -->
+              <h6>HTML</h6>
+              <p>
+                &lt;ul class="menu"&gt; <br />
+                &lt;li class="item"&gt;&lt;a href="" class="link"&gt;Home
+                page&lt;/a&gt;&lt;/li&gt; <br />
+                &lt;li class="item"&gt;&lt;a href=""
+                class="link"&gt;Blog&lt;/a&gt;&lt;/li&gt; <br />
+                &lt;li class="item"&gt;&lt;a href=""
+                class="link"&gt;Podcasts&lt;/a&gt;&lt;/li&gt; <br />
+                &lt;li class="item"&gt;&lt;a href=""
+                class="link"&gt;Contacts&lt;/a&gt;&lt;/li&gt; <br />
+                &lt;/ul&gt;
+              </p>
+              <p>
+                .menu { <br />
+                display: flex;<br />
+                }
+              </p>
+              <p>
+                Containerul flex ul.menu nu influențează în niciun fel a.link în
+                interiorul elementelor de listă, deoarece acestea sunt
+                descendenții săi, nu copii. Copiii sunt cei care devin
+                elemente-flex, în cazul nostru, elementele li.item.
+              </p>
+
+              <!-- CSS -->
+              <h6>CSS</h6>
+              <p>
+                * { <br />
+                box-sizing: border-box;<br />
+                } <br />
+                <br />
+                body { <br />
+                font-family: sans-serif;<br />
+                background-color: #f9f9fd;<br />
+                } <br />
+                <br />
+                .menu { <br />
+                padding: 10px;<br />
+                margin: 0;<br />
+                list-style: none;<br />
+                border-radius: 4px;<br />
+                background-color: #2196f3;<br />
+                box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),<br />
+                0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0,
+                0, 0.12);<br />
+                <br />
+                /* Making ul.menu a Flex container */ <br />
+                display: flex;<br />
+                } <br />
+                <br />
+                .menu .link { <br />
+                display: block;<br />
+                padding: 10px;<br />
+                border-radius: 4px;<br />
+                text-decoration: none;<br />
+                color: black;<br />
+                background-color: #fff;<br />
+                } <br />
+                <br />
+                .menu .link:hover { <br />
+                text-decoration: underline;<br />
+                background-color: olive;<br />
+                }
+              </p>
+            </div>
           </li>
 
           <!-- Proprietatea flex-direction -->
