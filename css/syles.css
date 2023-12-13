@@ -33,3 +33,230 @@ body {
   text-decoration: underline;
   background-color: olive;
 }
+
+/* flex directions */
+.menu.reversed {
+  /*  We rotate the main axis from right to left  */
+  flex-direction: row-reverse;
+  margin-top: 20px;
+}
+
+/* justify content */
+code {
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.justify-menu {
+  display: flex;
+  gap: 8px;
+  padding: 15px;
+  margin: 0;
+  margin-bottom: 20px;
+  list-style: none;
+  border-radius: 4px;
+  background-color: #2196f3;
+  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+}
+
+.justify-menu.flex-end {
+  justify-content: flex-end;
+}
+
+.justify-menu.center {
+  justify-content: center;
+}
+
+.justify-menu.space-between {
+  justify-content: space-between;
+}
+/* Align items */
+.page-header {
+  /*  Making header.page-header a Flex-container and aligning elements  */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #607d8b;
+  border-radius: 4px;
+  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+}
+
+.logo {
+  padding: 15px;
+  border-radius: 4px;
+  background-color: #ff5722;
+  text-decoration: none;
+  color: #fff;
+}
+
+.menu-align {
+  display: flex;
+  gap: 8px;
+  padding: 15px;
+  margin: 0;
+  list-style: none;
+  border-radius: 4px;
+  background-color: #2196f3;
+}
+
+.menu .link {
+  display: block;
+  padding: 10px;
+  border-radius: 4px;
+  text-decoration: none;
+  color: black;
+  background-color: #fff;
+}
+
+.menu .link:focus,
+.logo:hover,
+.logo:focus {
+  text-decoration: underline;
+  background-color: rgb(136, 19, 38);
+}
+
+/* image card */
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.card {
+  display: flex;
+  gap: 10px;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 10px;
+  background-color: #326439;
+  border-radius: 4px;
+}
+
+.card.flex-start-aligned {
+  align-items: flex-start;
+}
+
+.card + .card {
+  margin-top: 20px;
+}
+
+/* elements grid */
+.container {
+  max-width: 1200px;
+  padding: 5px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card-set {
+  display: flex;
+  /* Make a flex container multiline */
+  flex-wrap: wrap;
+  /* Set gap between rows and columns */
+  gap: 10px;
+  padding: 0;
+  list-style: none;
+}
+
+.item {
+  /*  Set the width of the elements  */
+  flex-basis: calc((100% - 20px) / 3);
+
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+}
+
+.item h2 {
+  margin-top: 0;
+  font-size: 20px;
+}
+
+.item p {
+  margin: 0;
+}
+
+/* elastic content */
+.elastic-container {
+  display: flex;
+  gap: 8px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.elastic-sidebar {
+  flex-basis: 200px;
+}
+
+.elastic-content {
+  flex-grow: 1;
+}
+
+.elastic-sidebar,
+.elastic-content {
+  height: 300px;
+  padding: 20px;
+  border-radius: 4px;
+  background-color: #fff;
+  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+}
+
+/* card basement */
+.basement-card {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 320px;
+  margin: 8px;
+  padding: 10px;
+  background-color: #fff;
+  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+}
+
+.basement-card > .basement-content {
+  flex-grow: 1;
+
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 2px dashed tomato;
+  border-radius: 4px;
+}
+
+.basement-card > .meta {
+  padding: 10px;
+  text-align: center;
+  background-color: teal;
+  color: white;
+  border-radius: 4px;
+}
+
+.basement-container {
+  display: flex;
+  justify-content: center;
+  margin: -8px;
+}
+
+/* align self */
+.align-self-card {
+  display: flex;
+  gap: 10px;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 10px;
+  background-color: #326439;
+  border-radius: 4px;
+}
+
+.align-self-card.flex-start-aligned img {
+  align-self: center;
+}

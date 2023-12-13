@@ -242,43 +242,958 @@
           <!-- Proprietatea flex-direction -->
           <li>
             <h4>Proprietatea flex-direction</h4>
-            <p></p>
+            <p>
+              Flexbox reprezintă un sistem pentru aranjarea elementelor într-o
+              anumită direcție – orizontală sau verticală. Proprietatea
+              flex-direction stabilește direcția axei principale, definind
+              direcția elementelor din container.
+            </p>
+            <p>flex-direction: row | row-reverse | column | column-reverse;</p>
+            <ul>
+              <li>
+                row – axa începe în stânga și se termină în dreapta. Aceasta
+                este o valoare implicită.
+              </li>
+              <li>
+                row-reverse – axa începe în dreapta și se termină în stânga.
+              </li>
+              <li>
+                column – axa principală devine verticală, începând de sus și
+                continuând până jos.
+              </li>
+              <li>
+                column-reverse – axa principală devine verticală, începând de
+                jos și continuând până sus.
+              </li>
+            </ul>
+            <p><b>Util...!!!</b></p>
+            <p>
+              Adică, această proprietate schimbă principal-start și main-end a
+              axei principale. Elementele-flex vor fi întotdeauna plasate de-a
+              lungul axei principale de la început (principal-start) până la
+              sfârșit (main-end).
+            </p>
+            <p>
+              În mod implicit, flex-direction este setat la row, astfel încât
+              elementele din meniul de sus încep să se alinieze de la stânga la
+              dreapta. Meniul de jos este setat la row-reverse, axa principală
+              este inversată la 180 de grade, iar elementele sunt aliniate de la
+              dreapta la stânga.
+            </p>
+
+            <!-- Exemplu -->
+            <div>
+              <h5>Exemplu</h5>
+              <ul class="menu">
+                <li class="item"><a href="" class="link">Home page</a></li>
+                <li class="item"><a href="" class="link">Blog</a></li>
+                <li class="item"><a href="" class="link">Podcasts</a></li>
+                <li class="item"><a href="" class="link">Contacts</a></li>
+              </ul>
+
+              <ul class="menu reversed">
+                <li class="item"><a href="" class="link">Home page</a></li>
+                <li class="item"><a href="" class="link">Blog</a></li>
+                <li class="item"><a href="" class="link">Podcasts</a></li>
+                <li class="item"><a href="" class="link">Contacts</a></li>
+              </ul>
+
+              <!-- HTML -->
+              <h6>HTML</h6>
+              <p>
+                &lt;ul class="menu"&gt; <br />
+                &lt;li class="item"&gt;&lt;a href="" class="link"&gt;Home
+                page&lt;/a&gt;&lt;/li&gt; <br />
+                &lt;li class="item"&gt;&lt;a href=""
+                class="link"&gt;Blog&lt;/a&gt;&lt;/li&gt; <br />
+                &lt;li class="item"&gt;&lt;a href=""
+                class="link"&gt;Podcasts&lt;/a&gt;&lt;/li&gt; <br />
+                &lt;li class="item"&gt;&lt;a href=""
+                class="link"&gt;Contacts&lt;/a&gt;&lt;/li&gt; <br />
+                &lt;/ul&gt;
+              </p>
+
+              <p>
+                &lt;ul class="menu reversed"&gt; <br />
+                &lt;li class="item"&gt;&lt;a href="" class="link"&gt;Home
+                page&lt;/a&gt;&lt;/li&gt; <br />
+                &lt;li class="item"&gt;&lt;a href=""
+                class="link"&gt;Blog&lt;/a&gt;&lt;/li&gt; <br />
+                &lt;li class="item"&gt;&lt;a href=""
+                class="link"&gt;Podcasts&lt;/a&gt;&lt;/li&gt; <br />
+                &lt;li class="item"&gt;&lt;a href=""
+                class="link"&gt;Contacts&lt;/a&gt;&lt;/li&gt; <br />
+                &lt;/ul&gt;
+              </p>
+
+              <!-- CSS -->
+              <h6>CSS</h6>
+              <p>
+                * { <br />
+                box-sizing: border-box;<br />
+                } <br />
+                <br />
+                body { <br />
+                font-family: sans-serif;<br />
+                background-color: #f9f9fd;<br />
+                } <br />
+                <br />
+                .menu { <br />
+                padding: 10px;<br />
+                margin: 0;<br />
+                list-style: none;<br />
+                border-radius: 4px;<br />
+                background-color: #2196f3;<br />
+                box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),<br />
+                0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0,
+                0, 0.12);<br />
+                <br />
+                .menu.reversed { <br />
+                /* We rotate the main axis from right to left */ <br />
+                flex-direction: row-reverse;<br />
+                margin-top: 20px;<br />
+                } <br />
+                <br />
+                /* Making ul.menu a Flex container */ <br />
+                display: flex;<br />
+                } <br />
+                <br />
+                .menu .link { <br />
+                display: block;<br />
+                padding: 10px;<br />
+                border-radius: 4px;<br />
+                text-decoration: none;<br />
+                color: black;<br />
+                background-color: #fff;<br />
+                } <br />
+                <br />
+                .menu .link:hover { <br />
+                text-decoration: underline;<br />
+                background-color: olive;<br />
+                }
+              </p>
+            </div>
           </li>
 
           <!-- Proprietatea justify-content -->
           <li>
             <h4>Proprietatea justify-content</h4>
-            <p></p>
+            <p>
+              Aceasta controlează poziționarea elementelor pe axa principală, de
+              la principal-start la main-end.
+            </p>
+            <p>
+              justify-content: flex-start | flex-end | center | space-between |
+              space-around | space-evenly
+            </p>
+            <ul>
+              <li>
+                flex-start – elementele sunt unite la începutul axei. Aceasta
+                este o valoare implicită.
+              </li>
+              <li>flex-end – elementele sunt fixate de capătul axei.</li>
+              <li>center – elementele sunt centrate pe axă.</li>
+              <li>
+                space-between – elementele sunt distribuite uniform pe axa
+                principală. Primul element este setat la începutul axei, iar
+                ultimul element, la sfârșit.
+              </li>
+              <li>
+                space-around – elementele sunt distribuite uniform, dar distanța
+                de la elementele din stânga și din dreapta până la marginea
+                containerului este jumătate din distanța dintre restul
+                elementelor.
+              </li>
+              <li>
+                space-evenly – elementele sunt distribuite astfel încât distanța
+                dintre elemente și cea de la elementele extreme până la
+                marginile containerului să fie aceeași.
+              </li>
+            </ul>
+            <p><b>Atentie...!!!</b></p>
+            <p>
+              Această proprietate are și alte valori, dar care nu sunt acceptate
+              de toate browserele sau sunt instabile între browsere diferite.
+            </p>
+            <p>
+              În exemplu sunt date valorile cele mai frecvent utilizate,
+              inclusiv valoarea implicită. Acestea includ trecerea conținutului
+              la dreapta (flex-end), centrarea (center) și distribuirea uniformă
+              a spațiului între elemente (space-between).
+            </p>
+
+            <!-- Exemplu -->
+            <div>
+              <h5>Exemplu</h5>
+              <code>justify-content: flex-start</code>
+              <ul class="justify-menu">
+                <li class="item"><a href="" class="link">Home page</a></li>
+                <li class="item"><a href="" class="link">Blog</a></li>
+                <li class="item"><a href="" class="link">Podcasts</a></li>
+                <li class="item"><a href="" class="link">Contacts</a></li>
+              </ul>
+
+              <code>justify-content: flex-end</code>
+              <ul class="justify-menu flex-end">
+                <li class="item"><a href="" class="link">Home page</a></li>
+                <li class="item"><a href="" class="link">Blog</a></li>
+                <li class="item"><a href="" class="link">Podcasts</a></li>
+                <li class="item"><a href="" class="link">Contacts</a></li>
+              </ul>
+
+              <code>justify-content: center</code>
+              <ul class="justify-menu center">
+                <li class="item"><a href="" class="link">Home page</a></li>
+                <li class="item"><a href="" class="link">Blog</a></li>
+                <li class="item"><a href="" class="link">Podcasts</a></li>
+                <li class="item"><a href="" class="link">Contacts</a></li>
+              </ul>
+
+              <code>justify-content: space-between</code>
+              <ul class="justify-menu space-between">
+                <li class="item"><a href="" class="link">Home page</a></li>
+                <li class="item"><a href="" class="link">Blog</a></li>
+                <li class="item"><a href="" class="link">Podcasts</a></li>
+                <li class="item"><a href="" class="link">Contacts</a></li>
+              </ul>
+
+              <!-- HTML -->
+              <h6>HTML</h6>
+              <p>
+                &lt;ul class="justify-menu flex-start"&gt; <br />
+                &lt;li class="item"&gt;&lt;a href="" class="link"&gt;Home
+                page&lt;/a&gt;&lt;/li&gt; <br />
+                &lt;li class="item"&gt;&lt;a href=""
+                class="link"&gt;Blog&lt;/a&gt;&lt;/li&gt; <br />
+                &lt;li class="item"&gt;&lt;a href=""
+                class="link"&gt;Podcasts&lt;/a&gt;&lt;/li&gt; <br />
+                &lt;li class="item"&gt;&lt;a href=""
+                class="link"&gt;Contacts&lt;/a&gt;&lt;/li&gt; <br />
+                &lt;/ul&gt;
+              </p>
+
+              <p>
+                &lt;ul class="justify-menu flex-end"&gt; <br />
+                &lt;li class="item"&gt;&lt;a href="" class="link"&gt;Home
+                page&lt;/a&gt;&lt;/li&gt; <br />
+                &lt;li class="item"&gt;&lt;a href=""
+                class="link"&gt;Blog&lt;/a&gt;&lt;/li&gt; <br />
+                &lt;li class="item"&gt;&lt;a href=""
+                class="link"&gt;Podcasts&lt;/a&gt;&lt;/li&gt; <br />
+                &lt;li class="item"&gt;&lt;a href=""
+                class="link"&gt;Contacts&lt;/a&gt;&lt;/li&gt; <br />
+                &lt;/ul&gt;
+              </p>
+
+              <p>
+                &lt;ul class="justify-menu center"&gt; <br />
+                &lt;li class="item"&gt;&lt;a href="" class="link"&gt;Home
+                page&lt;/a&gt;&lt;/li&gt; <br />
+                &lt;li class="item"&gt;&lt;a href=""
+                class="link"&gt;Blog&lt;/a&gt;&lt;/li&gt; <br />
+                &lt;li class="item"&gt;&lt;a href=""
+                class="link"&gt;Podcasts&lt;/a&gt;&lt;/li&gt; <br />
+                &lt;li class="item"&gt;&lt;a href=""
+                class="link"&gt;Contacts&lt;/a&gt;&lt;/li&gt; <br />
+                &lt;/ul&gt;
+              </p>
+
+              <p>
+                &lt;ul class="justify-menu space-between"&gt; <br />
+                &lt;li class="item"&gt;&lt;a href="" class="link"&gt;Home
+                page&lt;/a&gt;&lt;/li&gt; <br />
+                &lt;li class="item"&gt;&lt;a href=""
+                class="link"&gt;Blog&lt;/a&gt;&lt;/li&gt; <br />
+                &lt;li class="item"&gt;&lt;a href=""
+                class="link"&gt;Podcasts&lt;/a&gt;&lt;/li&gt; <br />
+                &lt;li class="item"&gt;&lt;a href=""
+                class="link"&gt;Contacts&lt;/a&gt;&lt;/li&gt; <br />
+                &lt;/ul&gt;
+              </p>
+
+              <!-- CSS -->
+              <h6>CSS</h6>
+              <p>
+                * { <br />
+                box-sizing: border-box;<br />
+                } <br />
+                <br />
+                body { <br />
+                font-family: sans-serif;<br />
+                background-color: #f9f9fd;<br />
+                } <br />
+                <br />
+                code { <br />
+                display: block;<br />
+                margin-top: 15px;<br />
+                margin-bottom: 10px;<br />
+                text-align: center;<br />
+                font-weight: 700;<br />
+                font-size: 20px;<br />
+                }br
+                <br />
+                .justify-menu { <br />
+                padding: 10px;<br />
+                margin: 0;<br />
+                list-style: none;<br />
+                border-radius: 4px;<br />
+                background-color: #2196f3;<br />
+                box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),<br />
+                0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0,
+                0, 0.12);<br />
+                <br />
+                .justify-menu.flex-start { <br />
+                justify-content: flex-start;<br />
+                } <br />
+                .justify-menu.flex-end { <br />
+                justify-content: flex-end;<br />
+                } <br />
+                <br />
+                .justify-menu.center { <br />
+                justify-content: center;<br />
+                } <br />
+                <br />
+                .justify-menu.space-between { <br />
+                justify-content: space-between;<br />
+                } <br />
+                <br />
+                /* Making ul.menu a Flex container */ <br />
+                display: flex;<br />
+                } <br />
+                <br />
+                .justify-menu .link { <br />
+                display: block;<br />
+                padding: 10px;<br />
+                border-radius: 4px;<br />
+                text-decoration: none;<br />
+                color: black;<br />
+                background-color: #fff;<br />
+                } <br />
+                <br />
+                .menu .link:hover { <br />
+                text-decoration: underline;<br />
+                background-color: olive;<br />
+                }
+              </p>
+            </div>
           </li>
 
           <!-- Proprietatea align-items -->
           <li>
             <h4>Proprietatea align-items</h4>
-            <p></p>
+            <p>
+              Aranjează elementele de-a lungul axei transversale. Reprezintă
+              echivalenta lui justify-content pentru axa principală.
+            </p>
+            <p>
+              align-items: stretch | flex-start | flex-end | center | baseline
+            </p>
+            <ul>
+              <li>
+                stretch – elementele sunt întinse pe toată lungimea axei.
+                Aceasta este o valoarea implicită.
+              </li>
+              <li>flex-start – elementele sunt alipite de începutul axei.</li>
+              <li>flex-end – elementele sunt alipite de capătul axei.</li>
+              <li>center – elementele sunt centrate pe axă.</li>
+              <li>
+                baseline – elementele sunt aliniate la linia de bază a
+                conținutului lor textual. Orice marime verticala are blocul le
+                pune in asa fel incat textele blocurilor sa fie in aceeasi linie
+              </li>
+            </ul>
+            <p><b>Atentie...!!!</b></p>
+            <p>
+              Pentru această proprietate există și alte valori, dar care nu sunt
+              acceptate de toate browserele sau sunt instabile între browsere
+              diferite.
+            </p>
+            <p>
+              Probabil cea mai comună utilizare este centrarea verticală a
+              elementelor pe un rând, mai ales dacă elementele au înălțimi
+              diferite. Să adăugăm un antet cu o siglă la marcajul nostru și să
+              plasăm un meniu în antet, astfel încât sigla și meniul să fie
+              vecine.
+            </p>
+
+            <!-- Exemplu -->
+            <div>
+              <h5>Exemplu</h5>
+              <div class="page-header">
+                <a href="" class="logo">Logo</a>
+
+                <ul class="menu-align">
+                  <li class="item"><a href="" class="link">Home page</a></li>
+                  <li class="item"><a href="" class="link">Blog</a></li>
+                  <li class="item"><a href="" class="link">Podcasts</a></li>
+                  <li class="item"><a href="" class="link">Contacts</a></li>
+                </ul>
+              </div>
+
+              <!-- HTML -->
+              <h6>HTML</h6>
+              <p>
+                &lt;div class="page-header"&gt;<br />
+                &lt;a href="" class="logo"&gt;Logo&lt;/a&gt; <br />
+                &lt;ul class="menu-align"&gt; <br />
+                &lt;li class="item"&gt;&lt;a href="" class="link"&gt;Home
+                page&lt;/a&gt;&lt;/li&gt; <br />
+                &lt;li class="item"&gt;&lt;a href=""
+                class="link"&gt;Blog&lt;/a&gt;&lt;/li&gt; <br />
+                &lt;li class="item"&gt;&lt;a href=""
+                class="link"&gt;Podcasts&lt;/a&gt;&lt;/li&gt; <br />
+                &lt;li class="item"&gt;&lt;a href=""
+                class="link"&gt;Contacts&lt;/a&gt;&lt;/li&gt; <br />
+                &lt;/ul&gt;<br />
+                &lt;/div&gt;
+              </p>
+
+              <!-- CSS -->
+              <h6>CSS</h6>
+              <p>
+                * { <br />
+                box-sizing: border-box;<br />
+                } <br />
+                <br />
+                body { <br />
+                font-family: sans-serif;<br />
+                background-color: #f9f9fd;<br />
+                } <br />
+                <br />
+                .page-header { <br />
+                /* Making header.page-header a Flex-container and aligning
+                elements */ <br />
+                display: flex;<br />
+                align-items: center;<br />
+                justify-content: space-between;<br />
+                padding: 10px;<br />
+                background-color: #607d8b;<br />
+                border-radius: 4px;<br />
+                box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),<br />
+                0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0,
+                0, 0.12);<br />
+                } <br />
+                <br />
+                .logo { <br />
+                padding: 15px;<br />
+                border-radius: 4px;<br />
+                background-color: #ff5722;<br />
+                text-decoration: none;<br />
+                color: #fff;<br />
+                } <br />
+                <br />
+                .menu { <br />
+                display: flex;<br />
+                gap: 8px;<br />
+                padding: 15px;<br />
+                margin: 0;<br />
+                list-style: none;<br />
+                border-radius: 4px;<br />
+                background-color: #2196f3;<br />
+                } <br />
+                <br />
+                .menu .link { <br />
+                display: block;<br />
+                padding: 10px;<br />
+                border-radius: 4px;<br />
+                text-decoration: none;<br />
+                color: black;<br />
+                background-color: #fff;<br />
+                } <br />
+                <br />
+                .menu .link:focus,<br />
+                .logo:hover,<br />
+                .logo:focus { <br />
+                text-decoration: underline;<br />
+                background-color: rgb(136, 19, 38);<br />
+                }
+              </p>
+              <p>
+                În primul rând trebuie să plasăm sigla a.logo și meniul ul.menu
+                într-o linie. Pentru a face asta, transformăm header.page-header
+                într-un container-flex.
+              </p>
+              <p>
+                .page-header { <br />
+                display: flex;<br />
+                }
+              </p>
+              <p>
+                Meniul este mai înalt decât sigla (cu toate stilurile din
+                exemplu), și se întinde pe verticală, pe toată lungimea axei
+                transversale, datorită faptului că align-items este setat la
+                stretch în mod implicit. Pentru a remedia acest lucru și a
+                alinia sigla cu meniul vertical la centru – setăm valoarea
+                center.
+              </p>
+              <p>
+                .page-header { <br />
+                display: flex;<br />
+                align-items: center;<br />
+                }
+              </p>
+              <p>
+                Ultimul pas este să mutăm sigla și meniul în colțurile
+                antetului, setând justify-content la space-between. Deoarece
+                există doar două elemente în linie (logo și meniu), acestea
+                fiind alipite de marginile axei principale, având între ele tot
+                spațiul liber.
+              </p>
+              <p>
+                .page-header { <br />
+                display: flex;<br />
+                align-items: center;<br />
+                justify-content: space-between;<br />
+                }
+              </p>
+            </div>
           </li>
 
           <!-- Cardul cu imagine -->
           <li>
             <h4>Cardul cu imagine</h4>
-            <p></p>
+            <p>
+              O problemă des întâlnită este un card cu conținut aranjat pe
+              orizontală și o imagine. Cardul este un container-flex, ceea ce
+              înseamnă că align-items este setat la stretch în mod implicit,
+              adică elementele sunt întinse pe verticală după înălțimea celui
+              mai mare element. Dacă există mai mult conținut decât înălțimea
+              imaginii, aceasta începe să se întindă, să schimbe proporțiile și
+              să se distorsioneze.
+            </p>
+
+            <!-- Exemplu -->
+            <div>
+              <h5>Exemplu :</h5>
+              <div class="card">
+                <img
+                  src="https://images.pexels.com/photos/952724/pexels-photo-952724.jpeg?auto=compress&cs=tinysrgb&w=240&dpr=2"
+                  alt=""
+                  width="240"
+                />
+                <div class="content">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Veritatis eaque odio voluptatibus assumenda reprehenderit?
+                  Nisi quibusdam nihil cum ipsam debitis alias at tempora omnis,
+                  recusandae tempore facilis, corrupti modi ducimus ullam natus
+                  amet, beatae inventore nulla deserunt aspernatur. Expedita,
+                  laudantium perspiciatis autem veniam quae est eveniet pariatur
+                  in quam repellendus magnam dolor laborum nulla culpa sunt
+                  aspernatur eius quidem?
+                </div>
+              </div>
+
+              <div class="card flex-start-aligned">
+                <img
+                  src="https://images.pexels.com/photos/952724/pexels-photo-952724.jpeg?auto=compress&cs=tinysrgb&w=240&dpr=2"
+                  alt=""
+                  width="240"
+                />
+                <div class="content">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Veritatis eaque odio voluptatibus assumenda reprehenderit?
+                  Nisi quibusdam nihil cum ipsam debitis alias at tempora omnis,
+                  recusandae tempore facilis, corrupti modi ducimus ullam natus
+                  amet, beatae inventore nulla deserunt aspernatur. Expedita,
+                  laudantium perspiciatis autem veniam quae est eveniet pariatur
+                  in quam repellendus magnam dolor laborum nulla culpa sunt
+                  aspernatur eius quidem?
+                </div>
+              </div>
+
+              <!-- HTML -->
+              <h6>HTML</h6>
+              <p>
+                &lt;div class="card"&gt;<br />
+                &lt;img <br />
+                src="https://images.pexels.com/photos/952724/
+                <br />pexels-photo-952724.jpeg?auto=compress&cs=tinysrgb&w=240&
+                <br />dpr=2" <br />
+                alt="" <br />
+                width="240" <br />
+                /&gt;<br />
+                &lt;div class="content"&gt;<br />
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br />
+                Veritatis eaque odio voluptatibus assumenda reprehenderit?
+                <br />
+                Nisi quibusdam nihil cum ipsam debitis alias at tempora omnis,
+                <br />
+                recusandae tempore facilis, corrupti modi ducimus ullam natus
+                <br />
+                amet, beatae inventore nulla deserunt aspernatur. Expedita,<br />
+                laudantium perspiciatis autem veniam quae est eveniet pariatur
+                <br />
+                in quam repellendus magnam dolor laborum nulla culpa sunt <br />
+                aspernatur eius quidem? <br />
+                &lt;/div&gt;<br />
+                &lt;/div&gt;<br />
+                <br />
+                &lt;div class="card flex-start-aligned"&gt;<br />
+                &lt;img <br />
+                src="https://images.pexels.com/photos/952724/
+                <br />pexels-photo-952724.jpeg?auto=compress&cs=tinysrgb&w=240&
+                <br />dpr=2" <br />
+                alt="" <br />
+                width="240" <br />
+                /&gt;<br />
+                &lt;div class="content"&gt;<br />
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br />
+                Veritatis eaque odio voluptatibus assumenda reprehenderit?
+                <br />
+                Nisi quibusdam nihil cum ipsam debitis alias at tempora omnis,
+                <br />
+                recusandae tempore facilis, corrupti modi ducimus ullam natus
+                <br />
+                amet, beatae inventore nulla deserunt aspernatur. Expedita,<br />
+                laudantium perspiciatis autem veniam quae est eveniet pariatur
+                <br />
+                in quam repellendus magnam dolor laborum nulla culpa sunt <br />
+                aspernatur eius quidem? <br />
+                &lt;/div&gt;<br />
+                &lt;/div&gt;<br />
+              </p>
+
+              <!-- CSS -->
+              <h6>CSS</h6>
+              <p>
+                img { <br />
+                display: block;<br />
+                max-width: 100%;<br />
+                } <br />
+                <br />
+                .card { <br />
+                display: flex;<br />
+                gap: 10px;<br />
+                max-width: 600px;<br />
+                margin: 0 auto;<br />
+                padding: 10px;<br />
+                background-color: #326439;<br />
+                border-radius: 4px;<br />
+                }<br />
+                <br />
+                .card.flex-start-aligned { <br />
+                align-items: flex-start;<br />
+                } <br />
+                <br />
+                .card + .card { <br />
+                margin-top: 20px;<br />
+                }
+              </p>
+            </div>
+            <p>
+              Problema se rezolvă simplu, este suficient să redefiniți valoarea
+              align-items pentru containerul-flex. În acest caz, valoarea
+              flex-start se potrivește pentru a face ca elementele să se fixeze
+              de începutul axei transversale.
+            </p>
+            <p>
+              .card { <br />
+              display: flex;<br />
+              align-items: flex-start;<br />
+              }
+            </p>
           </li>
 
           <!-- Proprietatea flex-wrap -->
           <li>
             <h4>Proprietatea flex-wrap</h4>
-            <p></p>
-          </li>
+            <p>
+              În mod implicit, este creat un container cu o singură linie cu
+              elementele plasate pe o singură linie, aranjate compact după
+              necesitate. Proprietatea flex-wrap vă permite să transformați un
+              container cu o singură linie într-un container cu mai multe linii.
+              Elementele vor fi adăugate pe o linie atâta timp cât există loc pe
+              ea, după care va fi creată automat o altă linie.
+            </p>
+            <p>flex-wrap: nowrap | wrap | wrap-reverse</p>
+            <ul>
+              <li>
+                <ul>
+                  <li>
+                    nowrap – toate elementele vor fi plasate pe aceeași linie.
+                    Aceasta este o valoare implicită.
+                  </li>
+                  <li>
+                    wrap – permite elementelor să treacă pe alte linii, care
+                    sunt aranjate de sus în jos (de-a lungul axei transversale)
+                    în mod implicit.
+                  </li>
+                  <li>
+                    wrap-reverse – permite elementelor să treacă pe alte linii,
+                    care sunt aranjate de jos în sus (de-a lungul axei
+                    transversale).
+                  </li>
+                </ul>
+              </li>
+            </ul>
 
-          <!-- Grid de elemente -->
-          <li>
-            <h4>Grid de elemente</h4>
-            <p></p>
+            <!-- Grid de elemente -->
+            <ul>
+              <li>
+                <h5>Grid de elemente</h5>
+                <p>
+                  Un container cu mai multe linii vă permite să realizați un
+                  "grid" de elemente, cum ar fi carduri de produse într-un
+                  magazin online, previzualizări ale articolelor de blog,
+                  galerii de imagini etc.
+                </p>
+
+                <!-- Exemplu -->
+                <div>
+                  <h6>Exemplu :</h6>
+                  <div class="container">
+                    <ul class="card-set">
+                      <li class="item">
+                        <h2>Lorem ipsum dolor</h2>
+                        <p>
+                          Lorem ipsum dolor sit amet consectetur adipisicing
+                          elit. Porro atque excepturi facilis molestias eius
+                          earum at officia.
+                        </p>
+                      </li>
+
+                      <li class="item">
+                        <h2>Lorem ipsum dolor</h2>
+                        <p>
+                          Lorem ipsum dolor sit amet consectetur adipisicing
+                          elit. Porro atque excepturi facilis molestias eius
+                          earum at officia.
+                        </p>
+                      </li>
+
+                      <li class="item">
+                        <h2>Lorem ipsum dolor</h2>
+                        <p>
+                          Lorem ipsum dolor sit amet consectetur adipisicing
+                          elit. Porro atque excepturi facilis molestias eius
+                          earum at officia.
+                        </p>
+                      </li>
+
+                      <li class="item">
+                        <h2>Lorem ipsum dolor</h2>
+                        <p>
+                          Lorem ipsum dolor sit amet consectetur adipisicing
+                          elit. Porro atque excepturi facilis molestias eius
+                          earum at officia.
+                        </p>
+                      </li>
+
+                      <li class="item">
+                        <h2>Lorem ipsum dolor</h2>
+                        <p>
+                          Lorem ipsum dolor sit amet consectetur adipisicing
+                          elit. Porro atque excepturi facilis molestias eius
+                          earum at officia.
+                        </p>
+                      </li>
+
+                      <li class="item">
+                        <h2>Lorem ipsum dolor</h2>
+                        <p>
+                          Lorem ipsum dolor sit amet consectetur adipisicing
+                          elit. Porro atque excepturi facilis molestias eius
+                          earum at officia.
+                        </p>
+                      </li>
+                    </ul>
+                  </div>
+                  <!-- HTML -->
+                  <h7>HTML</h7>
+                  <p>
+                    &lt;div class="container"&gt;<br />
+                    &lt;ul class="card-set"&gt;<br />
+                    &lt;li class="item"&gt;<br />
+                    &lt;h2&gt;Lorem ipsum dolor&lt;/h2&gt;<br />
+                    &lt;p&gt;Lorem ipsum dolor sit amet consectetur adipisicing
+                    elit. <br />
+                    Porro atque excepturi facilis molestias eius earum at
+                    officia.&lt;/p&gt;<br />
+                    &lt;/li&gt;<br />
+                    <br />
+                    &lt;li class="item"&gt;<br />
+                    &lt;h2&gt;Lorem ipsum dolor&lt;/h2&gt;<br />
+                    &lt;p&gt;Lorem ipsum dolor sit amet consectetur adipisicing
+                    elit. <br />
+                    Porro atque excepturi facilis molestias eius earum at
+                    officia.&lt;/p&gt;<br />
+                    &lt;/li&gt;<br />
+                    <br />
+                    &lt;li class="item"&gt;<br />
+                    &lt;h2&gt;Lorem ipsum dolor&lt;/h2&gt;<br />
+                    &lt;p&gt;Lorem ipsum dolor sit amet consectetur adipisicing
+                    elit. <br />
+                    Porro atque excepturi facilis molestias eius earum at
+                    officia.&lt;/p&gt;<br />
+                    &lt;/li&gt;<br />
+                    <br />
+                    &lt;li class="item"&gt;<br />
+                    &lt;h2&gt;Lorem ipsum dolor&lt;/h2&gt;<br />
+                    &lt;p&gt;Lorem ipsum dolor sit amet consectetur adipisicing
+                    elit. <br />
+                    Porro atque excepturi facilis molestias eius earum at
+                    officia.&lt;/p&gt;<br />
+                    &lt;/li&gt;<br />
+                    <br />
+                    &lt;li class="item"&gt;<br />
+                    &lt;h2&gt;Lorem ipsum dolor&lt;/h2&gt;<br />
+                    &lt;p&gt;Lorem ipsum dolor sit amet consectetur adipisicing
+                    elit. <br />
+                    Porro atque excepturi facilis molestias eius earum at
+                    officia.&lt;/p&gt;<br />
+                    &lt;/li&gt;<br />
+                    <br />
+                    &lt;li class="item"&gt;<br />
+                    &lt;h2&gt;Lorem ipsum dolor&lt;/h2&gt;<br />
+                    &lt;p&gt;Lorem ipsum dolor sit amet consectetur adipisicing
+                    elit. <br />
+                    Porro atque excepturi facilis molestias eius earum at
+                    officia.&lt;/p&gt;<br />
+                    &lt;/li&gt;<br />
+                    &lt;/ul&gt;<br />
+                    &lt;/div&gt;
+                  </p>
+
+                  <!-- CSS -->
+                  <h7>CSS</h7>
+                  <p>
+                    .container { <br />
+                    max-width: 1200px;<br />
+                    padding: 5px;<br />
+                    margin-left: auto;<br />
+                    margin-right: auto;<br />
+                    } <br />
+                    <br />
+                    .card-set { <br />
+                    display: flex;<br />
+                    /* Make a flex container multiline */ <br />
+                    flex-wrap: wrap;<br />
+                    /* Set gap between rows and columns */ <br />
+                    gap: 10px;<br />
+                    padding: 0;<br />
+                    list-style: none;<br />
+                    } <br />
+                    <br />
+                    .item { <br />
+                    /* Set the width of the elements */ <br />
+                    flex-basis: calc((100% - 20px) / 3);<br />
+                    <br />
+                    padding: 10px;<br />
+                    background-color: #fff;<br />
+                    border-radius: 4px;<br />
+                    box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),<br />
+                    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0,
+                    0, 0, 0.12);<br />
+                    } <br />
+                    <br />
+                    .item h2 { <br />
+                    margin-top: 0;<br />
+                    font-size: 20px;<br />
+                    } <br />
+                    <br />
+                    .item p { <br />
+                    margin: 0;<br />
+                    }
+                  </p>
+                  <p>
+                    Haideți să analizăm pas cu pas tehnica de creare a unui
+                    grid. În primul rând, trebuie să transformăm ul.card-set
+                    într-un container-flex și să îl facem din mai multe linii.
+                    Containerul poate primi o lățime arbitrară.
+                  </p>
+                  <p>
+                    .card-set { <br />
+                    display: flex;<br />
+                    flex-wrap: wrap;<br />
+                    }
+                  </p>
+                  <p>
+                    Apoi, setăm pentru toate elementele li.item marginea stângă
+                    și de sus (margin) conform aspectului. Să ne imaginăm că în
+                    aspectul propus aceasta este de 10px.
+                  </p>
+                  <p>
+                    .item { <br />
+                    margin-left: 10px;<br />
+                    margin-top: 10px;<br />
+                    }
+                  </p>
+                  <p>
+                    Pentru containerul ul.card-set, setăm aceleași margini, doar
+                    negative, adică -10px. Acest lucru este necesar pentru a
+                    compensa marginea elementelor la joncțiunea cu limitele
+                    containerului.
+                  </p>
+                  <p>
+                    .card-set { <br />
+                    display: flex;<br />
+                    flex-wrap: wrap;<br />
+                    margin-left: -10px;<br />
+                    margin-top: -10px;<br />
+                    }
+                  </p>
+                  <p>
+                    Ultimul pas este să dăm o mărime elementelor-flex li.item.
+                    Lățimea este specificată în procente din lățimea totală a
+                    părintelui (100%), folosind formula de mai jos. Aceasta este
+                    o soluție scalabilă deoarece dimensiunile elementelor nu vor
+                    trebui calculate din nou atunci când se schimbă lățimea
+                    containerului sau dimensiunea marginii.
+                  </p>
+                  <p>
+                    calc((100% - număr_elemente_într-o_linie *
+                    valoarea_unei_margini) / număr_elemente_într-o_linie)
+                  </p>
+                  <p>
+                    Gridul nostru are trei elemente într-o linie și fiecare are
+                    o margine stângă de 10px.
+                  </p>
+                  <p>
+                    .item { <br />
+                    flex-basis: calc((100% - 30px) / 3);<br />
+                    }
+                  </p>
+                  <p>Atentie :</p>
+                  <p>
+                    Proprietatea flex-basis este o înlocuire a width pentru
+                    elementele-flex despre care se va discuta în continuare.
+                  </p>
+                </div>
+              </li>
+            </ul>
           </li>
 
           <!-- Proprietatea align-content -->
           <li>
             <h4>Proprietatea align-content</h4>
-            <p></p>
+            <p>
+              Aceasta controlează alinierea tuturor rândurilor dintr-un
+              container cu mai multe linii de-a lungul axei transversale dacă
+              există spațiu liber. Similar modului în care justify-content
+              aliniază elementele pe fiecare linie. Această proprietate nu are
+              efect atunci când există o singură linie de elemente sau nu există
+              un spațiu vertical liber în container (nicio înălțime mai mare
+              decât conținutul nu este setată în mod explicit).
+            </p>
+            <p>
+              align-content: flex-start | flex-end | center | space-between |
+              space-around | space-evenly | stretch
+            </p>
+            <ul>
+              <li>
+                stretch – liniile sunt întinse uniform pentru a ocupa întregul
+                spațiu. Este o valoare implicită.
+              </li>
+              <li>flex-start – liniile sunt alipite de începutul axei.</li>
+              <li>flex-end – liniile sunt alipite de capătul axei.</li>
+              <li>center – liniile sunt centrate pe axă.</li>
+            </ul>
+            <p><b>Interesant...!!!</b></p>
+            <p>
+              Valorile space-between, space-around și space-evenly funcționează
+              ca proprietatea justify-content, numai în cazul liniilor și sunt
+              utilizate rar.
+            </p>
           </li>
         </ul>
       </section>
@@ -286,48 +1201,451 @@
       <!-- Proprietățile elementului -->
       <section>
         <h2 id="proprietati-element">Proprietățile elementului</h2>
-        <p></p>
+        <p>
+          Elementele-flex – copii ai containerului flex, care se încadrează în
+          elementele de nivelul întâi. Elementele-flex (denumite în continuare
+          pur și simplu elemente) încetează să se supună fluxului standard al
+          documentului, își pierd tipul (bloc, inline etc.) și urmează regulile
+          modelului de poziționare Flexbox.
+        </p>
         <ul>
           <!-- Proprietatea flex-basis -->
           <li>
             <h3>Proprietatea flex-basis</h3>
-            <p></p>
+            <p>
+              Specifică dimensiunea inițială a elementului înainte de a aloca
+              spațiu liber. Valoarea poate fi orice unitate validă: pixeli,
+              procente, rem etc. Pentru elementele-flex, este un înlocuitor
+              pentru proprietatea width, dar cu unele caracteristici diferite.
+              În exemplele din această lecție, toate elementele flexibile au
+              fost setate la flex-basis, nu la width.
+            </p>
+            <p>flex-basis: auto | valoare</p>
+            <ul>
+              <li>
+                Dacă sunt specificate atât flex-basis, cât și width, atunci
+                proprietatea width este ignorată.
+              </li>
+              <li>
+                Proprietatea flex-basis nu este dimensiunea finală a
+                elementului, ci dimensiunea înainte de alocarea spațiului liber.
+              </li>
+              <li>
+                Proprietățile min-width și max-width funcționează ca
+                constrângeri de dimensiune pe un element, chiar dacă are
+                flex-basis și nu width.
+              </li>
+              <li>
+                Proprietatea flex-basis poate defini mai degrabă înălțimea decât
+                lățimea elementului. Acest lucru se întâmplă atunci când axa
+                principală este verticală.
+              </li>
+            </ul>
           </li>
 
           <!-- Proprietatea flex-grow -->
           <li>
             <h3>Proprietatea flex-grow</h3>
-            <p></p>
-          </li>
+            <p>
+              Determină capacitatea unui element de a ocupa mai mult spațiu (de
+              a crește) în funcție de cât este necesar față de dimensiunea sa
+              inițială. Valoarea este specificată ca proporție a întregului
+              spațiu liber din container.
+            </p>
+            <p>flex-grow: proporție</p>
+            <p>
+              În mod implicit, toate elementele sunt setate la 0, ceea ce
+              înseamnă că elementele nu încearcă să ocupe spațiu liber
+              suplimentar, chiar dacă există unul. Valorile negative nu pot fi
+              specificate.
+            </p>
+            <p>
+              De exemplu, dacă toate elementele au aceeași valoare pentru
+              această proprietate, ele vor ocupa aceeași cantitate de spațiu în
+              container. Dar dacă toate sunt setate la 1 și un element este
+              setat la 2, atunci va încerca să ocupe de două ori mai mult spațiu
+              decât orice alt element.
+            </p>
 
-          <!-- Conținutul elastic -->
-          <li>
-            <h3>Conținutul elastic</h3>
-            <p></p>
-          </li>
+            <ul>
+              <!-- Conținutul elastic -->
+              <li>
+                <h4>Conținutul elastic</h4>
+                <p>
+                  Un caz tipic de utilizare pentru această proprietate este o
+                  bară laterală cu lățime fixă și un conținut fluid care ocupă
+                  tot spațiul rămas pe rând.
+                </p>
 
-          <!-- Subsolul cardului -->
-          <li>
-            <h3>Subsolul cardului</h3>
-            <p></p>
+                <!-- Exemplu -->
+                <div>
+                  <h5>Exemplu :</h5>
+                  <div class="elastic-container">
+                    <aside class="elastic-sidebar">Sidebar</aside>
+                    <main class="elastic-content">Main content</main>
+                  </div>
+
+                  <!-- HTML -->
+                  <h6>HTML</h6>
+                  <p>
+                    &lt;div class="elastic-container"&gt;<br />
+                    &lt;aside&gt;
+                    class="elastic-sidebar"&gt;Sidebar&lt;/aside&gt;<br />
+                    &lt;main&gt; class="lastic-content"&gt;Main
+                    content&lt;/main&gt;<br />
+                    &lt;/div&gt;
+                  </p>
+
+                  <!-- CSS -->
+                  <h6>CSS</h6>
+                  <p>
+                    .elastic-container { <br />
+                    display: flex;<br />
+                    gap: 8px;<br />
+                    max-width: 960px;<br />
+                    margin: 0 auto;<br />
+                    } <br />
+                    <br />
+                    .elastic-sidebar { <br />
+                    flex-basis: 200px;<br />
+                    } <br />
+
+                    .elastic-content { <br />
+                    flex-grow: 1;<br />
+                    } <br />
+                    <br />
+                    .elastic-sidebar,<br />
+                    .elastic-content { <br />
+                    height: 300px;<br />
+                    padding: 20px;<br />
+                    border-radius: 4px;<br />
+                    background-color: #fff;<br />
+                    box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),<br />
+                    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0,
+                    0, 0, 0.12);<br />
+                    }
+                  </p>
+                  <p>
+                    Tot ceea ce este necesar este să faceți este să transformați
+                    div.container într-un container-flex, apoi să setați
+                    aside.sidebar la o lățime fixă și proprietatea main.content
+                    la flex-grow: 1.
+                  </p>
+                </div>
+              </li>
+
+              <!-- Subsolul cardului -->
+              <li>
+                <h4>Subsolul cardului</h4>
+                <p>
+                  O altă utilizare comună a proprietății flex-grow este un card
+                  cu un subsol înclinat spre partea de jos, indiferent de
+                  cantitatea de conținut.
+                </p>
+
+                <!-- Exemplu -->
+                <div>
+                  <h5>Exemplu :</h5>
+                  <div class="basement-container">
+                    <div class="basement-card">
+                      <div class="basement-content">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Consequatur quos consequuntur libero, ab possimus
+                        voluptates.
+                      </div>
+                      <div class="meta">Card «footer»</div>
+                    </div>
+
+                    <div class="basement-card">
+                      <div class="basement-content">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing
+                        elit. Accusamus quod odit perferendis quaerat, quasi
+                        doloremque, delectus impedit earum possimus unde neque
+                        similique quam aliquam, pariatur fugiat modi tempore
+                        autem officia. Nostrum reiciendis suscipit, culpa nam
+                        rem, libero delectus similique amet architecto qui
+                        deleniti expedita odio accusamus sint ratione nesciunt
+                        magni!
+                      </div>
+                      <div class="meta">Card «footer»</div>
+                    </div>
+                  </div>
+
+                  <!-- HTML -->
+                  <h6>HTML</h6>
+                  <p>
+                    &lt;div class="basement-container"&gt;<br />
+                    &lt;div class="basement-card"&gt; <br />
+                    &lt;div class="basement-content"&gt; <br />
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    <br />
+                    Consequatur quos consequuntur libero, ab possimus
+                    voluptates. <br />
+                    &lt;/div&gt; <br />
+                    &lt;div class="meta"&gt;Card «footer»&lt;/div&gt; <br />
+                    &lt;/div&gt; <br />
+                    <br />
+                    &lt;div class="basement-card"&gt; <br />
+                    &lt;div class="basement-content"&gt; <br />
+                    Lorem ipsum dolor sit, amet consectetur adipisicing <br />
+                    elit. Accusamus quod odit perferendis quaerat, quasi <br />
+                    doloremque, delectus impedit earum possimus unde neque
+                    <br />
+                    similique quam aliquam, pariatur fugiat modi tempore <br />
+                    autem officia. Nostrum reiciendis suscipit, culpa nam <br />
+                    rem, libero delectus similique amet architecto qui <br />
+                    deleniti expedita odio accusamus sint ratione nesciunt
+                    <br />
+                    magni! <br />
+                    &lt;/div&gt; <br />
+                    &lt;div class="meta"&gt;Card «footer»&lt;/div&gt; <br />
+                    &lt;/div&gt; <br />
+                    &lt;/div&gt;
+                  </p>
+
+                  <!-- CSS -->
+                  <h6>CSS</h6>
+                  <p>
+                    .basement-card { <br />
+                    display: flex;<br />
+                    flex-direction: column;<br />
+                    flex-basis: 320px;<br />
+                    margin: 8px;<br />
+                    padding: 10px;<br />
+                    background-color: #fff;<br />
+                    box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),<br />
+                    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0,
+                    0, 0, 0.12);<br />
+                    border-radius: 4px;<br />
+                    } <br />
+                    <br />
+                    .basement-card > .elastic-content { <br />
+                    flex-grow: 1;<br />
+                    <br />
+                    margin-bottom: 10px;<br />
+                    padding: 10px;<br />
+                    border: 2px dashed tomato;<br />
+                    border-radius: 4px;<br />
+                    } <br />
+                    <br />
+                    .basement-card > .meta { <br />
+                    padding: 10px;<br />
+                    text-align: center;<br />
+                    background-color: teal;<br />
+                    color: white;<br />
+                    border-radius: 4px;<br />
+                    } <br />
+                    <br />
+                    .basement-container { <br />
+                    display: flex;<br />
+                    justify-content: center;<br />
+                    margin: -8px;<br />
+                    }
+                  </p>
+                  <p>
+                    Această tehnică e alcătuită din doi pași. Mai întâi, trebuie
+                    să transformați cardul într-un container-flex și să
+                    schimbați direcția axei principale, astfel încât, să ruleze
+                    vertical, de sus în jos. Acest lucru va forța ca
+                    elementele-flex să se alinieze.
+                  </p>
+                  <p>
+                    .card { <br />
+                    display: flex;<br />
+                    flex-direction: column;<br />
+                    }
+                  </p>
+                  <p>
+                    Rămâne să setați conținutul div.content la proprietatea
+                    flex-grow pentru a-i permite să ocupe tot spațiul liber de
+                    pe axa principală, mutând subsolul până la capătul său,
+                    adică în jos.
+                  </p>
+                  <p>
+                    .card > .content { <br />
+                    flex-grow: 1;<br />
+                    }
+                  </p>
+                </div>
+              </li>
+            </ul>
           </li>
 
           <!-- Proprietatea flex-shrink -->
           <li>
             <h3>Proprietatea flex-shrink</h3>
-            <p></p>
+            <p>
+              Aceasta specifică capacitatea unui element de a ocupa mai puțin
+              spațiu, după necesitate, (să se micșoreze) decât dimensiunea
+              inițială. Valoarea este dată ca proporție (cota).
+            </p>
+            <p>flex-shrink: proporție</p>
+            <p>
+              În mod implicit, toate elementele sunt setate la 1, ceea ce
+              înseamnă că elementele vor fi comprimate atunci când este necesar.
+              Valorile negative nu pot fi specificate. Este folosit destul de
+              rar.
+            </p>
           </li>
 
           <!-- Proprietatea align-self -->
           <li>
             <h3>Proprietatea align-self</h3>
-            <p></p>
+            <p>
+              Această align-self permite unui element să-și schimbe poziția pe
+              axa transversală, redefinind valoarea proprietății align-items a
+              containerului pentru el însuși. Nu există un analog pentru axa
+              principală și elementul se poate mișca singur pe axa transversală.
+            </p>
+            <p>
+              align-self: auto | flex-start | flex-end | center | baseline |
+              stretch
+            </p>
+            <p>
+              Să revenim la exemplul unui card cu o imagine și conținut. Pentru
+              a rezolva problema de întindere verticală a imaginii, am folosit
+              proprietatea containerului align-items. Proprietatea align-self vă
+              permite să remediați această problemă mai precis, redefinind
+              valoarea align-items numai pentru imagine.
+            </p>
+            <p>
+              .card > img { <br />
+              align-self: flex-start;<br />
+              }
+            </p>
+
+            <!-- Exemplu -->
+            <div>
+              <h5>Exemplu :</h5>
+              <div class="align-self-card">
+                <img
+                  src="https://images.pexels.com/photos/952724/pexels-photo-952724.jpeg?auto=compress&cs=tinysrgb&w=240&dpr=2"
+                  alt=""
+                  width="240"
+                />
+                <div class="align-self-content">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Veritatis eaque odio voluptatibus assumenda reprehenderit?
+                  Nisi quibusdam nihil cum ipsam debitis alias at tempora omnis,
+                  recusandae tempore facilis, corrupti modi ducimus ullam natus
+                  amet, beatae inventore nulla deserunt aspernatur. Expedita,
+                  laudantium perspiciatis autem veniam quae est eveniet pariatur
+                  in quam repellendus magnam dolor laborum nulla culpa sunt
+                  aspernatur eius quidem?
+                </div>
+              </div>
+
+              <div class="align-self-card flex-start-aligned">
+                <img
+                  src="https://images.pexels.com/photos/952724/pexels-photo-952724.jpeg?auto=compress&cs=tinysrgb&w=240&dpr=2"
+                  alt=""
+                  width="240"
+                />
+                <div class="align-self-content">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Veritatis eaque odio voluptatibus assumenda reprehenderit?
+                  Nisi quibusdam nihil cum ipsam debitis alias at tempora omnis,
+                  recusandae tempore facilis, corrupti modi ducimus ullam natus
+                  amet, beatae inventore nulla deserunt aspernatur. Expedita,
+                  laudantium perspiciatis autem veniam quae est eveniet pariatur
+                  in quam repellendus magnam dolor laborum nulla culpa sunt
+                  aspernatur eius quidem?
+                </div>
+              </div>
+
+              <!-- HTML -->
+              <h6>HTML</h6>
+              <p>
+                &lt;div class="align-self-card"&gt;<br />
+                &lt;img <br />
+                src="https://images.pexels.com/photos/952724/
+                <br />pexels-photo-952724.jpeg?auto=compress&cs=tinysrgb&w=240&
+                <br />dpr=2" <br />
+                alt="" <br />
+                width="240" <br />
+                /&gt;<br />
+                &lt;div class="align-self-content"&gt;<br />
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br />
+                Veritatis eaque odio voluptatibus assumenda reprehenderit?
+                <br />
+                Nisi quibusdam nihil cum ipsam debitis alias at tempora omnis,
+                <br />
+                recusandae tempore facilis, corrupti modi ducimus ullam natus
+                <br />
+                amet, beatae inventore nulla deserunt aspernatur. Expedita,<br />
+                laudantium perspiciatis autem veniam quae est eveniet pariatur
+                <br />
+                in quam repellendus magnam dolor laborum nulla culpa sunt <br />
+                aspernatur eius quidem? <br />
+                &lt;/div&gt;<br />
+                &lt;/div&gt;<br />
+                <br />
+                &lt;div class="align-self-card flex-start-aligned"&gt;<br />
+                &lt;img <br />
+                src="https://images.pexels.com/photos/952724/
+                <br />pexels-photo-952724.jpeg?auto=compress&cs=tinysrgb&w=240&
+                <br />dpr=2" <br />
+                alt="" <br />
+                width="240" <br />
+                /&gt;<br />
+                &lt;div class="align-self-content"&gt;<br />
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br />
+                Veritatis eaque odio voluptatibus assumenda reprehenderit?
+                <br />
+                Nisi quibusdam nihil cum ipsam debitis alias at tempora omnis,
+                <br />
+                recusandae tempore facilis, corrupti modi ducimus ullam natus
+                <br />
+                amet, beatae inventore nulla deserunt aspernatur. Expedita,<br />
+                laudantium perspiciatis autem veniam quae est eveniet pariatur
+                <br />
+                in quam repellendus magnam dolor laborum nulla culpa sunt <br />
+                aspernatur eius quidem? <br />
+                &lt;/div&gt;<br />
+                &lt;/div&gt;<br />
+              </p>
+
+              <!-- CSS -->
+              <h6>CSS</h6>
+              <p>
+                img { <br />
+                display: block;<br />
+                max-width: 100%;<br />
+                } <br />
+                <br />
+                .align-self-card { <br />
+                display: flex;<br />
+                gap: 10px;<br />
+                max-width: 600px;<br />
+                margin: 0 auto;<br />
+                padding: 10px;<br />
+                background-color: #326439;<br />
+                border-radius: 4px;<br />
+                }<br />
+                <br />
+                .align-self-card.flex-start-aligned { <br />
+                align-self: center;<br />
+                }
+              </p>
+            </div>
           </li>
 
           <!-- Proprietatea order -->
           <li>
             <h3>Proprietatea order</h3>
-            <p></p>
+            <p>
+              În mod implicit, elementele sunt plasate în ordinea în care sunt
+              specificate în fișierul HTML. Folosind proprietatea order, puteți
+              schimba vizual ordinea elementelor de-a lungul axei principale. În
+              același timp, nimic nu se va schimba în codul HTML.
+            </p>
+            <p># În mod implicit, toate elementele sunt setate la 0</p>
+            <p>order: poziție</p>
+            <p>
+              Această proprietate nu este folosită des, din cauza faptului că
+              rupe relația dintre ordinea vizuală a elementelor și modul în care
+              browserul și tehnologiile de asistență le văd.
+            </p>
           </li>
         </ul>
       </section>
